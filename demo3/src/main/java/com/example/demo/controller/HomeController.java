@@ -63,6 +63,18 @@ public class HomeController {
 		return "model1";
 	}
 	
+	@GetMapping("/form2")
+	public String form2() {
+		System.out.println("form2 메서드 호출");
+		return "form2";
+	}
+	
+	@PostMapping("/form-param2")
+	public String formParam2(@RequestParam("n1") String n1, Model model) {
+		model.addAttribute("n1", n1);
+		return "model2";
+	}
+	
 	
 }
 
