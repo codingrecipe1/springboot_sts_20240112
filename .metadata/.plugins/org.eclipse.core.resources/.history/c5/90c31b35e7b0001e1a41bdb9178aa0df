@@ -1,0 +1,29 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.demo.dto.DemoDTO;
+import com.example.demo.service.DemoService;
+
+import lombok.RequiredArgsConstructor;
+
+@Controller
+@RequiredArgsConstructor
+public class HomeController {
+	private final DemoService demoService;
+	
+	@GetMapping("/")
+	public String index() {
+		return "index";
+	}
+	
+	@GetMapping("/list")
+	public String list(Model model) {
+		List<DemoDTO> list = demoService.list();
+		return "list";
+	}
+}

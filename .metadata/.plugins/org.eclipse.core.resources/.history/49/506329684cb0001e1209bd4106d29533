@@ -1,0 +1,22 @@
+package com.example.demo.repository;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.dto.DemoDTO;
+
+import lombok.RequiredArgsConstructor;
+
+@Repository
+@RequiredArgsConstructor
+public class DemoRepository {
+	private final SqlSessionTemplate sql;
+
+	public List<DemoDTO> list() {
+		return sql.selectList();
+	}
+	
+	
+}
