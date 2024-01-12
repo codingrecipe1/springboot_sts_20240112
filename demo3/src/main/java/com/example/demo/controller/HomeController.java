@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -52,6 +53,14 @@ public class HomeController {
 		System.out.println("p1 = " + p1);
 		System.out.println("p2 = " + p2);
 		return "index";
+	}
+	
+	@GetMapping("/model1")
+	public String model1(Model model) {
+		String str1 = "오늘은 금요일";
+		// 화면에 가져갈 데이터를 담음
+		model.addAttribute("s1", str1);
+		return "model1";
 	}
 	
 	
