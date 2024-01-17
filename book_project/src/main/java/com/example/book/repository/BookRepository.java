@@ -21,4 +21,15 @@ public class BookRepository {
 		return sql.selectList("Book.findAll");
 	}
 
+	public BookDTO findById(Long id) {
+		return sql.selectOne("Book.findById", id);
+	}
+
 }
+
+
+
+
+
+
+

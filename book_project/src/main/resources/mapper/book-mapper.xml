@@ -10,4 +10,8 @@
 	<select id="findAll" resultType="com.example.book.dto.BookDTO">
 		select * from book_table
 	</select>
+	
+	<select id="findById" parameterType="Long" resultType="com.example.book.dto.BookDTO">
+		select * from book_table where id=#{id}
+	</select>
 </mapper>
