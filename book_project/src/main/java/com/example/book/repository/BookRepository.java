@@ -29,6 +29,10 @@ public class BookRepository {
 		sql.delete("Book.delete", id);
 	}
 
+	public void update(BookDTO bookDTO) {
+		sql.update("Book.update", bookDTO);
+	}
+
 }
 
 

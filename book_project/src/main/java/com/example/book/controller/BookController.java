@@ -54,6 +54,20 @@ public class BookController {
 		// 삭제가 끝난 뒤 목록 출력 
 		return "redirect:/list";
 	}
+	
+	@GetMapping("/book/update/{id}")
+	public String update(@PathVariable("id") Long id, Model model) {
+		BookDTO bookDTO = bookService.findById(id);
+		model.addAttribute("book", bookDTO);
+		return "update";
+	}
+	
+	@PostMapping("/update")
+	public String update(BookDTO bookDTO) {
+		System.out.println("BookDTO = " + bookDTO);
+		bookService.update(bookDTO);
+		return "redirect:/list";
+	}
 }
 
 

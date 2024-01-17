@@ -29,4 +29,8 @@ public class BookService {
 		bookRepository.delete(id);
 	}
 
+	public void update(BookDTO bookDTO) {
+		bookRepository.update(bookDTO);
+	}
+
 }
