@@ -25,6 +25,10 @@ public class BookRepository {
 		return sql.selectOne("Book.findById", id);
 	}
 
+	public void delete(Long id) {
+		sql.delete("Book.delete", id);
+	}
+
 }
 
 
